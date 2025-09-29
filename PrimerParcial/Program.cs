@@ -22,4 +22,4 @@ app.MapGet("/ping", () => Results.Ok("pong"));
 
 app.MapControllers();
 
-app.Run();
+app.Run();d
