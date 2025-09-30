@@ -9,5 +9,5 @@ public class AppDbContext : DbContext
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Event> Events => Set<Event>();   // <- añade esta línea si no la tienes
-
+    public DbSet<SupportTicket> SupportTickets => Set<SupportTicket>();
 }
