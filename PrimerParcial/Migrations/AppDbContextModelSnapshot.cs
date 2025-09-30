@@ -89,6 +89,45 @@ namespace PrimerParcial.Migrations
 
                     b.ToTable("Products");
                 });
+
+            modelBuilder.Entity("BackendApi.Models.SupportTicket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AssignedTo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ClosedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OpenedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RequesterEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Severity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SupportTickets");
+                });
 #pragma warning restore 612, 618
         }
     }
